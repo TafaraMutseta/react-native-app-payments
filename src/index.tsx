@@ -17,6 +17,6 @@ const CanMakePayments = NativeModules.CanMakePayments
       }
     );
 
-export function multiply(a: number, b: number): Promise<number> {
-  return CanMakePayments.multiply(a, b);
+export function canMakePayments(): Promise<boolean> {
+  return CanMakePayments.canMakePayments();
 }

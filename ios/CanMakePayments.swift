@@ -1,8 +1,9 @@
+import StoreKit
+
 @objc(CanMakePayments)
 class CanMakePayments: NSObject {
 
-    @objc(multiply:withB:withResolver:withRejecter:)
-    func multiply(a: Float, b: Float, resolve:RCTPromiseResolveBlock,reject:RCTPromiseRejectBlock) -> Void {
-        resolve(a*b)
+    @objc public func canMakePayments(_ resolve:RCTPromiseResolveBlock, withRejecter reject:RCTPromiseRejectBlock) -> Void {
+      resolve(SKPaymentQueue.canMakePayments())
     }
 }

@@ -11,11 +11,11 @@ npm install react-native-can-make-payments
 ## Usage
 
 ```js
-import { multiply } from "react-native-can-make-payments";
+import { canMakePayments } from 'react-native-can-make-payments';
 
-// ...
+// get SKPaymentQueue.canMakePayments() result
 
-const result = await multiply(3, 7);
+const result = await canMakePayments();
 ```
 
 ## Contributing

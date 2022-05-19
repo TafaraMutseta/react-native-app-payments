@@ -1,18 +1,21 @@
 import * as React from 'react';
 
 import { StyleSheet, View, Text } from 'react-native';
-import { multiply } from 'react-native-can-make-payments';
+import { canMakePayments } from 'react-native-can-make-payments';
 
 export default function App() {
-  const [result, setResult] = React.useState<number | undefined>();
+  const [canPayment, setCanPayment] = React.useState<boolean>();
 
   React.useEffect(() => {
-    multiply(3, 7).then(setResult);
+    canMakePayments().then(setCanPayment);
   }, []);
 
   return (
     <View style={styles.container}>
-      <Text>Result: {result}</Text>
+      <Text>
+        canMakePayments:
+        {canPayment === undefined ? 'undefined' : canPayment ? 'true' : 'false'}
+      </Text>
     </View>
   );
 }
