@@ -20,3 +20,7 @@ const CanMakePayments = NativeModules.CanMakePayments
 export function canMakePayments(): Promise<boolean> {
   return CanMakePayments.canMakePayments();
 }
+
+export function openExternalPurchaseLink(): Promise<string> {
+  return CanMakePayments.openExternalPurchaseLink();
+}
